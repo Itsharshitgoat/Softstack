@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Values</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-white: #FFFFFF;
+            --soft-white: #F1F1F1;
+            --translucent-white: rgba(255,255,255,0.1);
+            --accent-blue: #A3C9F5;
+            --accent-green: #B7E4C7;
+            --accent-lavender: #C8C8FF;
+            --bg-dark: #1F1F1F;
+            --bg-navy: #2B2B3C;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        body {
+            background: url('https://applescoop.org/image/wallpapers/mac/dark-gradient-22-09-2024-1727068748-hd-wallpaper.png') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--primary-white);
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            padding: 0.75rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            gap: 2rem;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--primary-white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: var(--soft-white);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-links a i {
+            font-size: 1.2rem;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-white);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-white);
+        }
+
+        .value-card p {
+            font-size: 1rem;
+            color: var(--soft-white);
+            line-height: 1.6;
+        }
+
+        /* User Rights Section */
+        .rights {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+            text-align: center; /* Center-align the rights section */
+        }
+
+        .rights ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the list items */
+        }
+
+        .rights li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            color: var(--soft-white);
+            max-width: 500px; /* Limit width for better readability */
+            text-align: left; /* Keep text left-aligned within centered container */
+        }
+
+        .rights li i {
+            color: var(--accent-green);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class='bx bxs-shopping-bag'></i>
+            Toolloom
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class='bx bxs-home'></i></a>
+        </div>
+    </nav>
+
+    <section class="values" id="values">
+        <h2 class="fade-in-up">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-bulb'></i>
+                <h3>Innovation</h3>
+                <p>We embrace creativity and strive to develop cutting-edge solutions that push boundaries.</p>
+            </div>
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-shield'></i>
+                <h3>Integrity</h3>
+                <p>Honesty and transparency guide our actions, fostering trust with our users.</p>
+            </div>
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-group'></i>
+                <h3>Collaboration</h3>
+                <p>We believe in the power of teamwork to achieve extraordinary results.</p>
+            </div>
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-star'></i>
+                <h3>Excellence</h3>
+                <p>We pursue the highest standards in everything we do, delivering unparalleled quality.</p>
+            </div>
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-user-check'></i>
+                <h3>User-Centricity</h3>
+                <p>Our users are at the heart of our decisions, ensuring their needs are met.</p>
+            </div>
+            <div class="value-card fade-in-up">
+                <i class='bx bxs-heart'></i>
+                <h3>Passion</h3>
+                <p>We are driven by enthusiasm and dedication to create meaningful impact.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rights" id="rights">
+        <h2 class="fade-in-up">Rights of the User</h2>
+        <div class="rights">
+            <ul>
+                <li class="fade-in-up"><i class='bx bxs-bell'></i> Right to clear and timely updates about changes to services.</li>
+                <li class="fade-in-up"><i class='bx bxs-lock-open'></i> Right to privacy and secure handling of your personal data.</li>
+                <li class="fade-in-up"><i class='bx bxs-check-shield'></i> Right to fair and ethical treatment in all interactions.</li>
+                <li class="fade-in-up"><i class='bx bxs-info-circle'></i> Right to transparent information about our services.</li>
+                <li class="fade-in-up"><i class='bx bxs-user'></i> Everyone deserves fair and equal treatment.</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>Made with ❤️ by Harshit</p>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId.includes('#')) {
+                    const targetSection = document.querySelector(targetId.split('#')[1] ? `#${targetId.split('#')[1]}` : targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else {
+                        window.location.href = targetId;
+                    }
+                } else {
+                    window.location.href = targetId;
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
