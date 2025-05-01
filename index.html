@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toolloom</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tJKlfBtD3gqW_6P3E1XgicbRgriFJLPkzA&s">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
@@ -466,7 +467,7 @@
             <h2>Get in Touch</h2>
             <form id="contact-form" action="https://formsubmit.co/itsharshitgoat@gmail.com" method="POST">
                 <input type="hidden" name="_subject" value="New Contact Form Submission from Toolloom">
-                <input type="hidden" name="_next" value="">
+                <input type="hidden" name="_next" value="https://itsharshitgoat.github.io/Website/#contact?form=success">
                 <input type="hidden" name="_captcha" value="false">
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -574,7 +575,7 @@
         });
 
         // Contact form handling
-        function handleSubmit() {
+        async function handleSubmit() {
             const form = document.getElementById('contact-form');
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
@@ -595,8 +596,33 @@
             // Show sending status
             showStatus('Sending...', '');
 
-            // Submit the form
-            form.submit();
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/itsharshitgoat@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        message,
+                        _subject: 'New Contact Form Submission from Toolloom',
+                        _captcha: 'false'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success === 'true') {
+                    showStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
+                    clearForm();
+                } else {
+                    showStatus('Failed to send message. Please try again later.', 'error');
+                }
+            } catch (error) {
+                showStatus('An error occurred. Please try again later.', 'error');
+            }
         }
 
         function isValidEmail(email) {
@@ -610,26 +636,26 @@
             statusMessage.className = type ? `status-message ${type}` : '';
         }
 
-        // Handle FormSubmit response (optional, for better UX)
+        function clearForm() {
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }
+
+        // Handle FormSubmit response for non-JavaScript fallback
         window.addEventListener('load', () => {
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('form') === 'success') {
                 showStatus('Message sent successfully! We\'ll get back to you soon.', 'success');
                 clearForm();
                 // Clear URL parameters
-                window.history.replaceState({}, document.title, window.location.pathname);
+                window.history.replaceState({}, document.title, window.location.pathname + '#contact');
             } else if (urlParams.get('form') === 'error') {
                 showStatus('Failed to send message. Please try again later.', 'error');
                 // Clear URL parameters
-                window.history.replaceState({}, document.title, window.location.pathname);
+                window.history.replaceState({}, document.title, window.location.pathname + '#contact');
             }
         });
-
-        function clearForm() {
-            document.getElementById('name').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('message').value = '';
-        }
     </script>
 </body>
 </html>
