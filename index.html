@@ -524,10 +524,12 @@
                 image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5eaf0c55-a9cd-4371-8600-696f6248b67a/djoazu2-59d28011-c7d0-4ac0-af28-1ee4318bce72.png/v1/fill/w_1192,h_670,q_70,strp/1_by_itsharshitgoat_djoazu2-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNWVhZjBjNTUtYTljZC00MzcxLTg2MDAtNjk2ZjYyNDhiNjdhXC9kam9henUyLTU5ZDI4MDExLWM3ZDAtNGFjMC1hZjI4LTFlZTQzMThiY2U3Mi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.tVxldGhv-PSTnMCBBks3E4HyrqWGQpBGwgMC_q4xlK4"
             },
             {
-                name: "SnapView",
+                name: "To Mind",
                 description: "Powerful integrated development environment for all programming needs.",
-                price: "...?",
-                image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5eaf0c55-a9cd-4371-8600-696f6248b67a/djoazu2-59d28011-c7d0-4ac0-af28-1ee4318bce72.png/v1/fill/w_1192,h_670,q_70,strp/1_by_itsharshitgoat_djoazu2-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNWVhZjBjNTUtYTljZC00MzcxLTg2MDAtNjk2ZjYyNDhiNjdhXC9kam9henUyLTU5ZDI4MDExLWM3ZDAtNGFjMC1hZjI4LTFlZTQzMThiY2U3Mi5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.tVxldGhv-PSTnMCBBks3E4HyrqWGQpBGwgMC_q4xlK4"
+                price: "Free",
+                feature: "To-Do List",
+                rating: "3.9/5",
+                image: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5eaf0c55-a9cd-4371-8600-696f6248b67a/djzkrau-553fe516-4269-4ed2-ab6f-a5f2b4c4268e.png/v1/fill/w_1225,h_652,q_70,strp/capture_by_itsharshitgoat_djzkrau-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjgyIiwicGF0aCI6IlwvZlwvNWVhZjBjNTUtYTljZC00MzcxLTg2MDAtNjk2ZjYyNDhiNjdhXC9kanprcmF1LTU1M2ZlNTE2LTQyNjktNGVkMi1hYjZmLWE1ZjJiNGM0MjY4ZS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.qbkf2NXDFCReSZSp8iYNnns2WtWYQp1bIq0dcYjF2D8"
             },
             {
                 name: "Quickset",
@@ -556,17 +558,19 @@
                                 <span class="regular-text">Price</span>
                             </div>
                             <div class="item">
-                                <span class="big-text">${product.feature || '...?'}</span>
-                                <span class="regular-text">Feature</span>
-                            </div>
+                                <span class="big-text">${product.feature || '...?'}<\/span>
+                                <span class="regular-text">Feature<\/span>
+                            <\/div>
                             <div class="item">
-                                <span class="big-text">${product.rating || '...?'}</span>
-                                <span class="regular-text">Rating</span>
+                                <span class="big-text">${product.rating || '...?'}<\/span>
+                                <span class="regular-text">Rating<\/span>
                             </div>
                         </div>
                         ${product.name === 'Quickset' 
-                            ? `<a href="quickset.html" class="btn">Download now</a>`
-                            : '<button class="btn">Coming soon</button>'}
+                            ? `<a href="quickset.html" class="btn">Download now<\/a>`
+                            : product.name === 'To Mind' 
+                                ? `<a href="To Mind.html" class="btn">Download now<\/a>`
+                                : '<button class="btn">Coming soon<\/button>'}
                     </div>
                 </div>
             `;
