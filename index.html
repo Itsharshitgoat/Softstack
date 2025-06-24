@@ -454,6 +454,101 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
         }
+
+        /* Customer Reviews Section */
+        .reviews {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .reviews-container {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 50px;
+        }
+        .reviews-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-white);
+        }
+        .reviews-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+        .tweet-card {
+            background: rgba(255,255,255,0.13);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.13);
+            box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.10);
+            padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+        }
+        .tweet-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+        }
+        .tweet-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .tweet-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-blue);
+            object-fit: cover;
+        }
+        .tweet-user {
+            font-weight: 700;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+        }
+        .tweet-time {
+            color: var(--soft-white);
+            font-size: 0.95rem;
+            margin-left: 0.5rem;
+        }
+        .tweet-content {
+            font-size: 1.15rem;
+            color: var(--primary-white);
+            line-height: 1.6;
+        }
+        .tweet-hashtag {
+            color: var(--accent-lavender);
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+        @media screen and (max-width: 900px) {
+            .reviews-container {
+                padding: 30px 15px;
+            }
+            .tweet-card {
+                max-width: 100%;
+                padding: 1rem 0.7rem 1rem 0.7rem;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .reviews {
+                padding: 2rem 0.5rem;
+            }
+            .reviews-container {
+                padding: 15px 2px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -465,6 +560,7 @@
         <div class="nav-links">
             <a href="#home"><i class='bx bxs-home'></i></a>
             <a href="#products"><i class='bx bxs-package'></i></a>
+            <a href="#reviews"><i class='bx bxs-message-dots'></i></a>
             <a href="#contact"><i class='bx bxs-envelope'></i></a>
         </div>
     </nav>
@@ -482,6 +578,123 @@
             <h2>Products</h2>
             <div class="products-grid">
                 <!-- Product cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-list">
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://i.pinimg.com/originals/5d/ad/a1/5dada155665553e2751e71993fdddc2d.jpg" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Ravi</span>
+                            <span class="tweet-time">· 1m</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Absolutely love <b>Softstack</b> The UI is so clean and the products are actually useful. <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh8dJemsshoBtJpvMinds9MGuU60nUhJdYZQ&s" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Mahesh</span>
+                            <span class="tweet-time">· 3w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        The <b>To Mind</b> app keeps my day organized. Highly recommend for one who loves to plan <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://avatarfiles.alphacoders.com/375/thumb-1920-375281.jpeg" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Rohit</span>
+                            <span class="tweet-time">· 3w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Tried <b>Macncheese</b> for Planing my jaipur trip super smooth experience. The chatbot is so good <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://i.pinimg.com/736x/fe/1d/bf/fe1dbf5af17ca70896bc3ad711d3854f.jpg" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Noname</span>
+                            <span class="tweet-time">· 4d</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Quickset's timer helps me stay focused during work sprints. Love the minimal design! <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*yZ94PPPtSvVron8LtH8apA.png" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Akshat</span>
+                            <span class="tweet-time">· 2w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        The support team is super responsive. my new go to for productivity tools. <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://i.etsystatic.com/31548528/r/il/ffde13/5804742914/il_fullxfull.5804742914_ap2d.jpg" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@Amrita</span>
+                            <span class="tweet-time">· 1w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Beautiful interface and easy to use. i love the macncheese it's like a digital friend in my computer<span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://qph.cf2.quoracdn.net/main-qimg-965748e68c344fbd9d8c67f28db87322-lq" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@startupguy</span>
+                            <span class="tweet-time">· 2m</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        I recommend Softstack to all my friends in the startup world.it's a Great value for me <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUe2yWqZZuQRkv8pLJ-hju_XjxjQ1CLtdXJUEzmZpxmgzV_wo8Ir4FxC_fLeJZPqG7hmw&usqp=CAU" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@creativemind</span>
+                            <span class="tweet-time">· 2w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        The chatbot in Macncheese is so helpful for quick question. Saves me a ton of time! <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
+                <div class="tweet-card fade-in-up">
+                    <div class="tweet-header">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEozfS45cI6kaOrGoYT5yKK2V3Cq-tc8R9lw&s" alt="User" class="tweet-avatar">
+                        <div>
+                            <span class="tweet-user">@nightowl</span>
+                            <span class="tweet-time">· 3w</span>
+                        </div>
+                    </div>
+                    <div class="tweet-content">
+                        Late-night coding is easier with To Mind's and quickset. Keeps me on track to be the best dev <span class="tweet-hashtag">#Softstack</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -573,7 +786,7 @@
                             : product.name === 'To Mind' 
                                 ? `<a href="To Mind.html" class="btn">Download now<\/a>`
                                 : product.name === 'Macncheese'
-                                    ? `<a href="Macncheese.html" class="btn">Download now<\/a>`
+                                    ? `<a href="macncheese.html" class="btn">Download now<\/a>`
                                     : '<button class="btn">Coming soon<\/button>'}
                     </div>
                 </div>
